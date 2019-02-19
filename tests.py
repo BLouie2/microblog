@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from datetime import datetime, timedelta
 import unittest
 from app import app, db
@@ -15,8 +16,8 @@ class UserModelCase(unittest.TestCase):
 	def test_password_hashing(self):
 		u = User(username = 'susan')
 		u.set_password('cat')
-		self.assertFalse(u.checking_password('dog'))
-		self.assertTrue(u.checking_password('cat'))
+		self.assertFalse(u.check_password('dog'))
+		self.assertTrue(u.check_password('cat'))
 
 
 	def test_avatar(self):
@@ -48,7 +49,47 @@ class UserModelCase(unittest.TestCase):
 		self.assertEqual(u1.followed.count(), 0)
 		self.assertEqual(u2.followers.count(), 0)
 
-	
+	def test_follow_posts(self):
+		# create four users
+		u1 = User(username='jon', email='jon@example.com')
+		u2 = User(username='edwin', email='edwin@example.com')
+		u3 = User(username='ikechi', email='ikechi@example.com')
+		u4 = User(username='curtis', email='curtis@example.com')
+
+		#create four posts
+		now = datetime.utcnow()
+		p1 = Post(body="post from Jon", author=u1,
+					timestamp=now + timedelta(seconds=1))
+		p2 = Post(body="post from edwin", author=u2,
+					timestamp=now + timedelta(seconds=4))
+		p3 = Post(body="post from ikechi", author=u3,
+					timestamp=now + timedelta(seconds=3))
+		p4 = Post(body="post from curtis", author=u4,
+					timestamp=now + timedelta(seconds=2))
+		db.session.add_all([p1, p2, p3, p4])
+		db.session.commit()
+
+		# setup the followers
+		u1.follow(u2) # jon follows edwin
+		u1.follow(u4) # jon follows curtis
+		u2.follow(u3) # edwin follows ikechi
+		u3.follow(u4) # ikechi follows curtis
+		db.session.commit()
+
+		#check the followed posts of each user
+		f1 = u1.followed_posts().all()
+		f2 = u2.followed_posts().all()
+		f3 = u3.followed_posts().all()
+		f4 = u4.followed_posts().all()
+		self.assertEqual(f1, [p2,p4,p1])
+		self.assertEqual(f2, [p2, p3])
+		self.assertEqual(f3, [p3, p4])
+		self.assertEqual(f4, [p4])
+
+if __name__ == '__main__':
+	unittest.main(verbosity=2)
+
+
 
 
 

@@ -42,3 +42,8 @@ class EditProfileForm(FlaskForm):
 			if user is not None:
 				raise ValidationError('Username already taken. Select a different username.')
 
+class PostForm(FlaskForm):
+	post = TextAreaField('What do you want to tell the world?', validators=[
+		DataRequired(), Length(min=1, max=140)])
+	submit = SubmitField('Submit')
+
