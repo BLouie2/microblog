@@ -1,22 +1,39 @@
-2019-02-11 21:34:52,017 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-11 21:37:29,151 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-16 16:08:01,288 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-16 16:10:07,696 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-16 16:12:50,915 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-16 16:13:58,979 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-16 16:14:50,962 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 14:56:28,384 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:01:24,889 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:02:13,172 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:10:34,745 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:21:05,817 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:39:57,243 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:40:49,780 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:47:55,847 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 15:55:32,340 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 16:08:06,319 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 16:13:40,112 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 21:29:34,476 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 21:31:17,103 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 22:02:29,611 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-18 22:03:05,601 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
+2019-02-19 23:07:56,568 ERROR: Exception on /explore [GET] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 41, in explore
+    if posts.has_next else None
+NameError: name 'post' is not defined
+2019-02-19 23:08:01,568 ERROR: Exception on /explore [GET] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 41, in explore
+    if posts.has_next else None
+NameError: name 'post' is not defined
+2019-02-19 23:19:13,895 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
