@@ -16,7 +16,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 #the login value above is the name you would use for a url_for() call
-mail=Mail(app)
+mail = Mail(app)
 
 if not app.debug:
 	if app.config['MAIL_SERVER']:
