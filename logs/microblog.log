@@ -1,4 +1,4 @@
-2019-02-19 23:07:56,568 ERROR: Exception on /explore [GET] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
+2019-04-06 12:45:02,480 ERROR: Exception on /register [GET] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,57 +12,25 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 41, in explore
-    if posts.has_next else None
-NameError: name 'post' is not defined
-2019-02-19 23:08:01,568 ERROR: Exception on /explore [GET] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 90, in register
+    return render_template('register.html', title='Register', form=form)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
     reraise(exc_type, exc_value, tb)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 41, in explore
-    if posts.has_next else None
-NameError: name 'post' is not defined
-2019-02-19 23:19:13,895 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-02-21 21:04:51,322 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:45]
-2019-03-10 18:57:32,885 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-03-10 19:04:01,378 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-03-10 19:14:37,837 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-03-16 08:31:59,246 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-03-16 08:33:19,323 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-03-16 08:36:09,699 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-04-03 21:43:45,249 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-04-03 22:00:22,851 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-04-04 23:24:58,361 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-04-04 23:36:41,295 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
-2019-04-04 23:40:38,090 ERROR: Exception on /reset_password_request [POST] [in /Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py:1761]
-Traceback (most recent call last):
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
-    raise value
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/brianlouie/Desktop/microblog/app/routes.py", line 159, in reset_password_request
-    user = User.quality.filter_by(email=form.email.data).first()
-AttributeError: type object 'User' has no attribute 'quality'
-2019-04-04 23:42:38,343 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:47]
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/brianlouie/Desktop/microblog/app/templates/register.html", line 2, in top-level template code
+    {% import 'bootstrap.html/wtf.html' as wtf %}
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 58, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Users/brianlouie/Desktop/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 86, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap.html/wtf.html
+2019-04-06 12:46:14,122 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:48]
