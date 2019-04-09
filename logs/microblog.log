@@ -34,3 +34,4 @@ Traceback (most recent call last):
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: bootstrap.html/wtf.html
 2019-04-06 12:46:14,122 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:48]
+2019-04-09 07:06:06,355 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:50]
