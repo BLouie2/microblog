@@ -16,6 +16,7 @@ def before_request():
 	if current_user.is_authenticated:
 		current_user.last_seen = datetime.utcnow()
 		db.session.commit()
+	g.locale = str(get_locale())
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
@@ -148,7 +149,7 @@ def unfollow(username):
 		return redirect(url_for('user', username=username))
 	current_user.unfollow(user)
 	db.session.commit()
-	flash(('You are not following %(username)s.', username=username))
+	flash(_('You are not following %(username)s.', username=username))
 	return redirect(url_for('user', username=username))
 
 @app.route('/reset_password_request', methods=['GET', 'POST'])
@@ -160,7 +161,8 @@ def reset_password_request():
 		user = User.query.filter_by(email=form.email.data).first()
 		if user:
 			send_password_reset_email(user)
-		flash(_('Check your email for the instructions to reset your password'))
+		flash(
+			_('Check your email for the instructions to reset your password'))
 		return redirect(url_for('login'))
 	return render_template('reset_password_request.html',
 							title=_('Reset Password'), form=form)
