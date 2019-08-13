@@ -10,6 +10,8 @@ from app.forms import ResetPasswordRequestForm, ResetPasswordForm
 from app.email import send_password_reset_email
 from flask_babel import _, get_locale
 from guess_language import guess_language
+from flask import jsonify
+from app.translate import translate
 
 
 @app.before_request
@@ -186,3 +188,10 @@ def reset_password(token):
 		flash(_('Your password has been reset'))
 		return redirect(url_for('login'))
 	return render_template('reset_password.html', form=form)
+
+	@app.route('/translate', methods=['POST'])
+	@login_required
+	def translate_text():
+		return jsonify({'text':translate(request.form['text'],
+										request.form['source_language'],
+										request.form['dest_language'] )})
