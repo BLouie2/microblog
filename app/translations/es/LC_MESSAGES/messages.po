@@ -76,7 +76,7 @@ msgstr "Nombre de usuario inválido. Por favor use un nombre de usuario diferent
 
 #: app/forms.py:46
 msgid "What do you want to tell the world?"
-msgstr "Que hay de nuevo? Dí algo"
+msgstr "¿Que hay de nuevo? Dí algo"
 
 #: app/forms.py:52 app/forms.py:58
 msgid "Request Password Reset"
