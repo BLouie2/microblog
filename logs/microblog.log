@@ -44,3 +44,7 @@ jinja2.exceptions.TemplateNotFound: bootstrap.html/wtf.html
 2019-06-03 22:44:16,390 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
 2019-06-03 22:46:00,706 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
 2019-07-20 20:39:14,158 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
+2019-08-26 23:29:24,378 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
+2019-08-26 23:31:17,612 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
+2019-08-26 23:35:00,978 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
+2019-08-26 23:40:50,250 INFO: Microblog startup [in /Users/brianlouie/Desktop/microblog/app/__init__.py:53]
